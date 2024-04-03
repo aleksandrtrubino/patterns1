@@ -2,11 +2,9 @@ package org.example;
 
 import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 
-public class DesEncryptorStrategy implements EncryptorStrategy {
+public class DesEncryptorStrategy extends EncryptorStrategy {
     private final SecretKey secretKey;
 
     public DesEncryptorStrategy() {
@@ -40,4 +38,23 @@ public class DesEncryptorStrategy implements EncryptorStrategy {
         }
 
     }
+
+    @Override
+    public void printName() {
+        System.out.print("Name: DES\n");
+    }
+
+    @Override
+    public void printDescription() {
+        String description = """
+                Description:
+                DES (Data Encryption Standard) encryption is a symmetric-key block cipher algorithm. It was 
+                developed in the early 1970s by IBM and was adopted by the U.S. government as a standard for 
+                encrypting sensitive data. DES operates on 64-bit blocks of plaintext and uses a 56-bit key 
+                for encryption.
+                """;
+        System.out.print(description);
+    }
+
+
 }

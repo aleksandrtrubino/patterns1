@@ -1,13 +1,25 @@
 package org.example;
 
-import javax.crypto.BadPaddingException;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
+public abstract class EncryptorStrategy {
 
-public interface EncryptorStrategy {
+    public abstract String encrypt(String string);
+    public abstract String decrypt(String string);
 
-    public String encrypt(String string);
-    public String decrypt(String string);
+    public void templateMethod(){
+        printName();
+        printDescription();
+        calculateAndPrintExecutionTime();
+    }
+
+    public abstract void printName();
+    public abstract void printDescription();
+    public  void calculateAndPrintExecutionTime(){
+        String string = "Hello";
+        Long startTime = System.nanoTime();
+        decrypt(encrypt(string));
+        Long endTime = System.nanoTime();
+        System.out.print("Execution time: " + (endTime - startTime) + '\n');
+    }
+
+
 }

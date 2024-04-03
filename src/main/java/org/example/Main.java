@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
 
         Encryptor encryptor = new Encryptor(new AesEncryptorStrategy());
-        String string = "Hello";
+        String string = "String to encrypt";
         String encryptedString = encryptor.encrypt(string);
         String decryptedString = encryptor.decrypt(encryptedString);
         System.out.println(encryptedString);
@@ -25,6 +25,20 @@ public class Main {
         decryptedString = encryptor.decrypt(encryptedString);
         System.out.println(encryptedString);
         System.out.println(decryptedString);
+
+//        Encryptor encryptor = new Encryptor(new AesEncryptorStrategy());
+//        encryptor.templateMethod();
+
+//        System.out.println("__________________");
+//
+//        encryptor.setEncryptorStrategy(new CaesarEncryptorStrategy());
+//        encryptor.templateMethod();
+//
+//        System.out.println("__________________");
+//
+//        encryptor.setEncryptorStrategy(new DesEncryptorStrategy());
+//        encryptor.templateMethod();
+
 
     }
 }

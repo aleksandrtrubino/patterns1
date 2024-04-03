@@ -19,4 +19,9 @@ public class Encryptor {
     public String decrypt(String string){
         return this.encryptorStrategy.decrypt(string);
     }
+
+    public void templateMethod(){
+        this.encryptorStrategy.templateMethod();
+    }
+
 }

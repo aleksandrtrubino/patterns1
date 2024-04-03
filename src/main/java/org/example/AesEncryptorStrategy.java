@@ -2,11 +2,10 @@ package org.example;
 
 import javax.crypto.*;
 import javax.crypto.spec.SecretKeySpec;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 
-public class AesEncryptorStrategy implements EncryptorStrategy {
+
+public class AesEncryptorStrategy extends EncryptorStrategy {
     private final SecretKey secretKey;
 
     public AesEncryptorStrategy() {
@@ -40,4 +39,22 @@ public class AesEncryptorStrategy implements EncryptorStrategy {
         }
 
     }
+
+    @Override
+    public void printName() {
+        System.out.print("Name: AES\n");
+    }
+
+    @Override
+    public void printDescription() {
+        String description = """
+                Description:
+                The AES (Advanced Encryption Standard) algorithm is a symmetric block cipher that operates 
+                on fixed-size blocks of data. It was adopted by the U.S. government in 2001 as the standard 
+                encryption algorithm for securing sensitive information. AES supports key sizes of 128, 192,
+                or 256 bits and operates on 128-bit blocks of data.
+                """;
+        System.out.print(description);
+    }
+
 }
